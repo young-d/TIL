@@ -56,7 +56,7 @@
 <br/>
 <br/>
 
-## Model Class로 받는 방법
+4. Model Class로 받는 방법
 
 ```java
     @RestController
@@ -82,7 +82,7 @@
 <br/>
 <br/>
 
-## @PathVariable로 받는 방법
+5. @PathVariable로 받는 방법
 
 ```java
     @RestController
@@ -101,7 +101,7 @@
 <br/>
 <br/>
 
-## Model Class + @PathVariable 조합으로 받는 방법
+6. Model Class + @PathVariable 조합으로 받는 방법
 
 ```java
     @RestController
