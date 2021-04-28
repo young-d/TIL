@@ -1,9 +1,9 @@
-# 🏸파라미터 받는 방법
+## 🏸파라미터 받는 방법
 
-## Request를 통해 받는 방법
+1. Request를 통해 받는 방법
 
 ```java
-	@RestController
+    @RestController
     class TempController {
     	
         @GetMapping("/temp")
@@ -15,13 +15,13 @@
         }
     }
 ```
+<br/>
+<br/>
 
----
-
-## Map으로 받는 방법
+2. Map으로 받는 방법
 
 ```java
-	@RestController
+    @RestController
     class TempController {
     
     	@GetMapping("/temp")
@@ -33,13 +33,13 @@
     	}
     }
 ```
+<br/>
+<br/>
 
----
-
-## @RequestParam을 통해 직접 매칭하는 방법
+3. @RequestParam을 통해 직접 매칭하는 방법
 
 ```java
-	@RequestController
+    @RequestController
     class TempController {
     
     	@GetMapping("/temp")
@@ -53,12 +53,13 @@
 - HTTP 요청 파라미터를 전달받을 때 사용되고 name에 해당하는 값을 입력
 - Parameter 타입을 int로 지정하면 자동으로 변환
 
----
+<br/>
+<br/>
 
 ## Model Class로 받는 방법
 
 ```java
-	@RestController
+    @RestController
     class TempController {
     
     	@GetMapping("/temp")
@@ -78,12 +79,13 @@
 - View에 전달할 모델 데이터를 설정할 때 사용
 - 데이터의 양이 많은 경우 유용
 
----
+<br/>
+<br/>
 
 ## @PathVariable로 받는 방법
 
 ```java
-	@RestController
+    @RestController
     class TempController {
     	
         @GetMapping("/temp/{a}/{b}")
@@ -96,12 +98,13 @@
 
 - path에서 Parameter를 받는 규칙
 
----
+<br/>
+<br/>
 
 ## Model Class + @PathVariable 조합으로 받는 방법
 
 ```java
-	@RestController
+    @RestController
     class TempController {
     	@GetMapping("/temp/{a}/{b}")
         String temp(Abc abc) {
@@ -117,5 +120,3 @@
         }
     }
 ```
-
----
