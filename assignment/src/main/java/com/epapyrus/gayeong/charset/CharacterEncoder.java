@@ -6,6 +6,11 @@ import com.sun.org.slf4j.internal.Logger;
 import java.io.*;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+//
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import java.io.*;
 
 public class CharacterEncoder {
 
@@ -69,6 +74,7 @@ public class CharacterEncoder {
         //4. broken-euc-kr
         //      convert("euc-kr", "utf-8", "broken-euc-kr.txt");
         restore("iso-8859-1", "utf-8", "broken-iso-8859-1.txt");
+
 
     }
 }
