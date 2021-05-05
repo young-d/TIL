@@ -1,4 +1,4 @@
-package encoding;
+package main.java.com.epapyrus.gayeong.charset;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -9,7 +9,7 @@ public class Encoding {
 
     private final Logger log = Logger.getGlobal();
     private String encoding = "utf-8";
-    private final String filePath = "./src/Asignment/utf-8.txt";
+    private final String filePath = "./src/main/java/com/epapyrus/gayeong/charset/utf-8.txt";
 
 //    public Encoding(String encoding, String filePath) {
 //        this.encoding = encoding;
@@ -24,7 +24,7 @@ public class Encoding {
         File file = new File(filePath);
         StringBuilder content = new StringBuilder();
         String line = "";
-        String newFileName = "./src/Asignment/euc-kr.txt";
+        String newFileName = "./src/main/java/com/epapyrus/gayeong/charset/euc-kr.txt";
         String newEncoding = "euc-kr";
         int temp = 0;
         File file1 = new File(newFileName);
