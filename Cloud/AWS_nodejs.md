@@ -1,23 +1,15 @@
 ## ec2 인스턴스 생성 (보안그룹설정)
----
-
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5382bab7-ddcb-4427-82f2-114a499cb893/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5382bab7-ddcb-4427-82f2-114a499cb893/Untitled.png)
 
 ## pem키 ppk로 변환(PuTTY)
----
 
     ec2-user@(퍼블릭IP DNS) → SSH>Auth open NewKeyPair.ppkec2 
 
 ## 접속 성공!
----
-
     +리눅스에서 접속시
 
     `$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 DNS>>`
 
 ## 터미널에서 작업
----
-
 ❗ 충돌나거나 설치시 에러나는 경우 
 
 ### 기존 파일 삭제
@@ -26,8 +18,10 @@
  $rm yarn.ock`
 
 ### 캐시 리셋
-`$npm cache clean`
+`npm cache clean`
+
 ---
+
 🥎 **yarn 설치**
 
 `$curl -sL https://dl.yarnpkg.com/rpm/yarn.repo -o /etc/yum.repos.d/yarn.repo`
@@ -36,6 +30,8 @@
 
 `$curl -o- -L https://yarnpkg.com/install.sh | bash`
 
+---
+
 🏀 **nodejs & npm 설치**
 
 `$sudo yum install -y gcc-c++ make`
@@ -43,10 +39,14 @@
 
 `$sudo yum install -y nodejs` (ec2 Linux에 설치)
 
+---
+
 🏐 버전 확인
 
 `$npm -v 
  $node -v`
+ 
+---
 
 🏈 웹서버 배포 -by 깃
 
@@ -59,6 +59,9 @@
 `$ npm run build` (프로젝트 빌드)
 
 `$ npm start` (서버 실행)
+
+---
+
 
 🏉**NGINX**
 
