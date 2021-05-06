@@ -4,7 +4,7 @@
 
     ec2-user@(퍼블릭IP DNS) → SSH>Auth open NewKeyPair.ppkec2 
 
-## 3. 접속 성공!
+### 3. 접속 성공!
 +리눅스에서 접속시
 `$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 DNS>>`
 
