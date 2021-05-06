@@ -1,24 +1,23 @@
-## ec2 인스턴스 생성 (보안그룹설정)
+### 1. ec2 인스턴스 생성 (보안그룹설정)
 
-## pem키 ppk로 변환(PuTTY)
+### 2. pem키 ppk로 변환(PuTTY)
 
     ec2-user@(퍼블릭IP DNS) → SSH>Auth open NewKeyPair.ppkec2 
 
-## 접속 성공!
-    +리눅스에서 접속시
+## 3. 접속 성공!
++리눅스에서 접속시
+`$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 DNS>>`
 
-    `$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 DNS>>`
-
-## 터미널에서 작업
+### 4. 터미널에서 작업
 ❗ 충돌나거나 설치시 에러나는 경우 
 
-### 기존 파일 삭제
-`$rm -rf ./node_modules
- $rm package-lock.json
- $rm yarn.ock`
+**기존 파일 삭제**
+`$ rm -rf ./node_modules
+ $ rm package-lock.json
+ $ rm yarn.ock`
 
-### 캐시 리셋
-`npm cache clean`
+**캐시 리셋**
+`$ npm cache clean`
 
 ---
 
