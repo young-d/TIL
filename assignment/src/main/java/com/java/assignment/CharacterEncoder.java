@@ -15,7 +15,7 @@ public class CharacterEncoder {
     private static final String ATTACHEDFILE = "utf-8.contents.txt";
 
     //인코딩 변환
-    public static void convert(String readingCharset, String writingCharset, String fileName) {
+    public static void convert(String readingCharset, String writingCharset, String fileName) throws IOException {
         try (
                 BufferedReader bufferedReader = new BufferedReader(
                         new InputStreamReader(
@@ -25,9 +25,7 @@ public class CharacterEncoder {
                                 new FileOutputStream(FILEPATH + fileName), writingCharset));
         ) {
             bufferedWriter.write(bufferedReader.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } 
     }
 
 
@@ -43,8 +41,6 @@ public class CharacterEncoder {
 
             fileWriter = new FileWriter(FILEPATH + fileName, false);
             fileWriter.write(URLDecoder.decode(content, "utf-8"));
-        } catch (IOException e) {
-            e.printStackTrace();
         } finally {
             if (fileWriter != null) fileWriter.close();
             if (bufferedReader != null) bufferedReader.close();
