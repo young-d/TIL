@@ -3,8 +3,6 @@
 - 배경
 - 개념
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3218e5c-251a-49ea-b986-3a747f15a76b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3218e5c-251a-49ea-b986-3a747f15a76b/Untitled.png)
-
 - 조건
 - 원칙 - HTTP API  와 차이점
 
