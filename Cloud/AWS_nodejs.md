@@ -2,11 +2,11 @@
 
 ### 2. pem키 ppk로 변환(PuTTY)
 
-    ec2-user@(퍼블릭IP DNS) → SSH>Auth open NewKeyPair.ppkec2 
+    ec2-user@(퍼블릭IP/DNS) → SSH>Auth open NewKeyPair.ppkec2 
 
 ### 3. 접속 성공!
 +리눅스에서 접속시
-`$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 DNS>>`
+`$ sudo ssh -i <<pem키 경로>> ec2-user@<<퍼블릭 IP/DNS>>`
 
 ### 4. 터미널에서 작업
 ❗ 충돌나거나 설치시 에러나는 경우 
