@@ -37,8 +37,6 @@ public class ClawMachine {
         };
         int[] moves = {1,5,3,5,1,2,1,4};
 
-        System.out.println(solution(board, moves));
+        solution(board, moves);
     }
-
-
 }
