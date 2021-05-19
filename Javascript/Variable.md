@@ -38,9 +38,9 @@ console.log(name); // 출력안됨
 console.log(globalName); //global name
 ```
 
-**var(ES5) 사용금지!!**
+**var(ES5) 사용금지!!**<br/>
 -reason1. var는 선언 전에 값 할당 또는 출력이 가능.. (by.var hoisting)
-   cf>hoisting: 어디에 선언했는지에 관계없이 항상 선언부를 가장 위로 올려주는 것
+   cf>hoisting: 어디에 선언했는지에 관계없이 항상 선언부를 가장 위로 올려주는 것<br/>
 -reason2. var no block scope
 
 ```jsx
