@@ -24,7 +24,7 @@
 - blockspoce :block({})안에 있는 변수는 블럭안에서만 유효
     - global variable: block밖에서 선언해도 block안밖에서 모두 쓸 수 있는 변수
 
-```jsx
+```jsx 
 let globalName = 'global name';
 {
     let name = 'ellie';
