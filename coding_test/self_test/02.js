@@ -1,9 +1,5 @@
 //1, 3, 6, 11, 19, 31, 48, (), ...
-class Array {
-    constructor(arr1) {
-        this.arr1 = arr1;
-    }
-}
+let arr1 = [];
 
 function expectNum() {
     this.arr1 = [];
@@ -25,7 +21,8 @@ function expectNum() {
     
     number = this.arr1[this.arr1.length-1] + added1 + added2;
     this.arr1[this.arr1.length] = number;
-    console.log(this.arr1.length);
 
     return number;
 }
+
+console.log(expectNum());
