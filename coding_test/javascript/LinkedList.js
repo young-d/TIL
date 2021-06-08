@@ -12,21 +12,8 @@ class LinkedList {
         this.tail = null;        
     }
 
-    //node list 찾기
-    findNodes(item) {
-        let currNode = this.head;
-        let itemList = new ArrayList();
-        while(currNode !== null) {
-            if(currNode.data === item) {
-                itemList.append(currNode);
-            }
-            currNode = currNode.next;
-        }
-        return itemList[0];
-    }
-
     //node item 찾기
-    findNode(item, index = 0) {
+    findNode(item) {
         let currNode = this.head;
         while(currNode !== null && currNode.data !== item) {
             currNode = currNode.next;
@@ -50,44 +37,31 @@ class LinkedList {
     //node 중간 삽입
     insert(newItem, item) {
         const newNode = new Node(newItem);
-        let currNode = this.findNodes(item);
+        let currNode = this.findNode(item);
         newNode.next = currNode.next;
         currNode.next = newNode;
     }
 
     //node 삭제
     remove(item) {
-        const targetNode = this.findNodes(item);  //삭제할 노드
+        const targetNode = this.findNode(item);  //삭제할 노드
         let currNode = this.head;
+        let preNode = this.prev;
         while(currNode.next !== targetNode) {
             currNode = currNode.next;
         }
+
+        //중간노드 삭제
         if(targetNode.next === null) {
             currNode.next = null;
         }else {
             currNode.next = currNode.next.next;
         }
-    }
 
-    //removeHead
-    removeHead() {
-        const targetNode = this.head;
-        if(targetNode !== null) {
+        //headNode 삭제
+        if(targetNode === this.head) {
             this.head = targetNode.next;
-            
-            if(targetNode.next === null) {
-                this.tail = null;
-            }
         }
-    }
-
-    //removeTail
-    removeTail() {
-        const targetNode = this.tail;
-        if(this.head === targetNode) {
-            this.head = null;
-        }
-        this.tail = null;
     }
 
     //toString
@@ -95,7 +69,7 @@ class LinkedList {
         let str = '[';
         let currNode = this.head;
         while(currNode !== null) {
-            str += `currNode : ${currNode.data}, index : ${currNode.index} \n`;
+            str += `currNode : ${currNode.data} \n`;
             currNode = currNode.next;
         }
         return str + ']';
@@ -103,17 +77,20 @@ class LinkedList {
 }
 
 let list = new LinkedList();
-// list.append(`0번째`);
-// list.append(`1번째`);
-// list.append(`2번째`);
-// list.append(`3번째`);
-// list.append(`4번째`);
-// list.append(`5번째`);
-// list.append(`6번째`);
-// list.remove(`4번째`);
 let current = list.head;
-for(let i = 0; i < 10; i++) {
+for(let i = 0; i < 7; i++) {
     list.append(`${i}번째`);
 }
-list.insert('3-1번째', '4번째');
-console.log(list.toString());
+list.insert('3-1번째', '3번째'); //4번째 앞에 노드 삽입
+list.remove('5번째'); //5번째 노드 삭제
+console.log(list.toString()); 
+/*
+[currNode : 0번째 
+currNode : 1번째
+currNode : 2번째
+currNode : 3번째
+currNode : 3-1번째
+currNode : 4번째
+currNode : 6번째
+]
+*/
