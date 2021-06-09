@@ -14,10 +14,6 @@ function solution(participant, completion) {
             answer = person;
         }
     }
-
-    
-
-
     return answer;
 }
 
