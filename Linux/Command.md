@@ -23,12 +23,16 @@ $ `rm {directory}`
 
 ### 생성(또는 수정)
 
-$ `vi {file}`  : 편집기 상태 실행(읽기+쓰기 모드) </br>
-$ `touch {file}` : 빈 파일만 생성 </br>
+$ `vi {file}`  : 편집기 상태 실행(읽기+쓰기 모드)
+
+$ `touch {file}` : 빈 파일만 생성
+
 $ `cat > {file}` : vi 편집기 상태로 들어감, 문서 작성후 Ctrl+D로 빠져나옴
 
 ### 내용 보기(read only)
 
-$ `cat {file}` : 파일 전체 내용 </br>
-$ `head -n {file}` : 위에서부터 n줄 만큼만 </br>
+$ `cat {file}` : 파일 전체 내용
+
+$ `head -n {file}` : 위에서부터 n줄 만큼만
+
 $ `tail -n {file}` : 아래에서부터 n줄 만큼만(로그파일 볼 때 유용)
