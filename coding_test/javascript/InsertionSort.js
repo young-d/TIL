@@ -7,7 +7,7 @@ function insertionSort(array) {
         
         //오름차순 -> 정렬된 영역에서 현재값보다 큰 요소가 있으면 좌우 요소 swap
         //(현재값보다 큰 값을 정렬되지 않은 영역으로 내보내는 과정)
-        while(index >= 0 && array[index] > temp) {
+        while(array[index] !== undefined && array[index] > temp) {
             array[index + 1] = array[index];
             index--;
         }
