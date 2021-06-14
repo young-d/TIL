@@ -20,18 +20,10 @@ function solution(s) {
             // }
 
             //3.
-            // if(!(s.charCodeAt(i) >= '0'.charCodeAt(0) &&  s.charCodeAt(i)<= '9'.charCodeAt(0))) {
-            //     answer = false;
-            //     break;
-            // }
-
-            //4.
-            if(!Number(s[i])) {
+            if(!(s.charCodeAt(i) >= '0'.charCodeAt(0) &&  s.charCodeAt(i)<= '9'.charCodeAt(0))) {
                 answer = false;
                 break;
-            }
-
-            
+            }            
         }
     }else {
         answer = false;
