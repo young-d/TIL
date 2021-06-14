@@ -8,7 +8,7 @@ class Node {
     }
 }
 
-class Tree {
+class BinaraSearchTree {
     constructor() {
         this.root = null;
     }
@@ -19,8 +19,13 @@ class Tree {
             this.root = new Node(data);
             return;
         }
-
         let current = this.root;
+        _insert(current, data);
+
+        return;
+    }
+
+    _insert(current, data){
 
         if(data < current.data) {
             if(current.left === null) {
@@ -28,21 +33,28 @@ class Tree {
                 return;
             }else {
                 current = current.left;
+                this._insert(current, data);
             }
-        }else if(data > current.data) {
+        }else {
             if(current.right === null) {
                 current.right = new Node(data);
                 return;
             }else {
                 current = current.right;
+                this._insert(current, data);
             }
         }
 
-        this.insert(data);
-    }
+        // base case
+        // if ()
 
+        // if{
+        //     insert(node, data)
+        // }else insert(node, data);
+
+    }
     //데이터 검색
-    search(data) {
+    search(current, data) {
         if(this.root === null) {
             return false;
         }
@@ -64,8 +76,10 @@ class Tree {
         }
 
         this.search(data);
-    }
 
+        return false;
+
+    }
 }
 
 
