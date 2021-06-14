@@ -44,7 +44,6 @@ function getBinary(number, n) {
 
     for(let i = 0; i < n; i++) {
         if(number / square >= 1) {
-            // console.log(`index: ${i}, number: ${number}, square: ${square}`);
             s += '#';
             number -= square;
         }else {
