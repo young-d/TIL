@@ -2,8 +2,6 @@ function solution(participant, completion) {
     let answer = '';
     let obj = {};
     
-
-    
     for(let p of participant) {
         if(!obj[p]) {
             obj[p] = 1;
@@ -21,8 +19,6 @@ function solution(participant, completion) {
             answer = p;
         }
     }
-    
-    
     
     return answer;
 }
