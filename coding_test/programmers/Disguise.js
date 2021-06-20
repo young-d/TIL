@@ -6,7 +6,6 @@ function solution(clothes) {
         kinds.push(clothes[i][1]);
     }
 
-
     let obj = kinds.reduce((cnt, element) => {
         if(cnt[element]) {
             cnt[element] += 1;
@@ -14,14 +13,12 @@ function solution(clothes) {
             cnt[element] = 2;
         }
         return cnt;
-    }, {})
+    }, {});
 
-    
-    for(let key of obj) {
+    for(let key in obj) {
         answer *= obj[key];
     }
     
-    console.log(answer);
     return answer - 1;
 }
 
