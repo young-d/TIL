@@ -9,8 +9,6 @@ function DFS(L) {
         }
         if(tmp.length > 0) console.log(tmp);
     }else {
-
-        
         ch[L] = 1;
         DFS(L + 1);
         ch[L] = 0;

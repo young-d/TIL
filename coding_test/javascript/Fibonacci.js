@@ -1,7 +1,7 @@
 let numbers = [];
 function fibo(n) {
     if(numbers[n] > 0) {
-        return numbers[n];  //이미 구한 수는 재귀호출 없이 저장된 값 리턴
+        return numbers[n];  //이미 구한 수는 재귀호출 없이 저장된 값 리턴(memoization)
     }else if(n === 1|| n === 2) {
         return numbers[n] = 1;
     }else {
