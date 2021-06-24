@@ -1,6 +1,5 @@
 function solution(arr) {
     let answer = [];
-    let idx = 0;
 
     let obj = arr.reduce((cnt, element) => {
         if(cnt[element]) {
@@ -13,7 +12,7 @@ function solution(arr) {
     
     for(let key in obj) {
         if(obj[key] > 1)  {
-            answer[idx++] = obj[key];
+            answer.push(obj[key]);
         }
     }
 
