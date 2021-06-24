@@ -1,34 +1,30 @@
 function solution(n, lost, reserve) {
-    let answer = 0;
-    let lostPerson = {};
-    let saver = {};
-    
-    
-    for(let r of reserve) {
-        saver[r] = 1;
-    }
+    let cnt = 0;
 
-    for(let l of lost) {
-        if(saver[l] === 1) {
-            delete(saver[l]);
-        }else{
-            lostPerson[l] = 1;
+    for(let i = 0; i < lost.length; i++) {
+        for(let j = 0; j < reserve.length; j++) {
+            if(lost[i] === reserve[j]) {
+                lost[i] = 0;
+                reserve[j] = 0;
+                break;
+            }
         }
     }
 
-    for(let l of lost) {
-        if(saver[l - 1] === 1) {
-            delete(lostPerson[l]);
-            delete(saver[l - 1]);
-        }else if(saver[l + 1] === 1) {
-            delete(lostPerson[l]);
-            delete(saver[l + 1]);
+    for(let i = 0; i < lost.length; i++) {
+        if(lost[i] === 0) continue;
+
+        for(let j = 0; j < reserve.length; j++) {
+            if(reserve[j] === 0) continue;
+
+            if(lost[i] - 1 === reserve[j] || lost[i] + 1 === reserve[j]) {
+                lost[i] = 0;
+                reserve[j] = 0;
+                break;
+            }
         }
+        if(lost[i] !== 0) cnt++;
     }
 
-    for(let p in lostPerson) {
-        answer++;
-    }
-
-    return n - answer;
+    return n - cnt;
 }
