@@ -22,8 +22,8 @@ function BFS(start, end) {
         }
         level++;
     }
-    return level;
+    return 0;
 }
 
-console.log(BFS(5, 14)); // 3
+console.log(BFS(5, 14)); // 3   
 
