@@ -3,8 +3,10 @@ function solution(begin, target, words) {
     let check = Array.from({length : words.length}, () => 0);
     let queue = [];
 
+    //시작 단어도 words 배열에 추가
     words.unshift(begin);
     
+    //단어를 key로, 해당 단어가 바꿀 수 있는 다른 단어들의 배열을 value로 하는 object
     let obj = words.reduce((acc, element) => {
         acc[element] = new Set();
         for(let i = 0; i < element.length; i++) {
@@ -20,6 +22,7 @@ function solution(begin, target, words) {
         return acc;
     }, {});
 
+    //BFS로 레벨 탐색
     queue.push(begin);
     check[0] = 1;
 
@@ -39,7 +42,7 @@ function solution(begin, target, words) {
         answer++;
     }
 
-    return 0;
+    return 0; //결국 바꿀 수 없으면 0 리턴
 }
 
 console.log(solution("hit","cog",["hot", "dot", "dog", "lot", "log", "cog"]));
