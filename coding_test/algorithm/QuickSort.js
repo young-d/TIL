@@ -1,7 +1,7 @@
 function quickSort(array, left = 0, right = array.length - 1) {
     if(left >= right) return;
 
-    const mid = Math.floor((right - left) / 2);
+    const mid = Math.floor((left + right) / 2);
     const pivot = array[mid];
     const partition = divide(array, left, right, pivot);
 
@@ -20,7 +20,9 @@ function quickSort(array, left = 0, right = array.length - 1) {
             
             //swap (pivot 보다 큰 left의 값과 pivot보다 작은 right의 값)
             if(left <= right) {
-                swap(array, left, right);
+                let swap = array[left];
+                array[left] = array[right];
+                array[right] = swap;
                 //한칸씩 옮기기
                 left++;
                 right--;
@@ -30,12 +32,7 @@ function quickSort(array, left = 0, right = array.length - 1) {
         return left;
     }
 
-    //swap 함수
-    function swap(array, left, right) {
-        let tmp = array[left];
-        array[left] = array[right];
-        array[right] = tmp;
-    }
-
     return array;
 }
+
+console.log(quickSort([3,5,2,3,34,1,32]));
