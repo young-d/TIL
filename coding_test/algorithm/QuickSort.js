@@ -9,24 +9,18 @@ function quickSort(array, left = 0, right = array.length - 1) {
     quickSort(array, left, partition - 1);
     quickSort(array, partition, right);
 
-    //배열을 둘로 나눈 후 오른쪽 배열의 left index값 리턴
+    //배열을 둘로 나눈 후 오른쪽 배열의 첫번째 index값 리턴
     function divide(array, left, right, pivot) {
         while(left <= right) {
             //pivot 보다 작은 값은 swap skip
-            while(array[left] < pivot) {
-                left++;
-            }
+            while(array[left] < pivot) left++;
         
             //pivot 보다 큰 값은 swap skip
-            while(pivot < array[right]) {
-                right--;
-            }
-
+            while(pivot < array[right]) right--;
+            
             //swap (pivot 보다 큰 left의 값과 pivot보다 작은 right의 값)
             if(left <= right) {
-                let tmp = array[left];
-                array[left] = array[right];
-                array[right] = tmp;
+                swap(array, left, right);
                 //한칸씩 옮기기
                 left++;
                 right--;
@@ -34,6 +28,13 @@ function quickSort(array, left = 0, right = array.length - 1) {
         }
 
         return left;
+    }
+
+    //swap 함수
+    function swap(array, left, right) {
+        let tmp = array[left];
+        array[left] = array[right];
+        array[right] = tmp;
     }
 
     return array;
