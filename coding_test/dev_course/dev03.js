@@ -1,7 +1,7 @@
 function solution(n, wires) {
-    let diff = n - 1;
-    
+    let diff = n - 2;
     let obj = {};
+    
     for(let w of wires) {
         if(!obj[w[0]]) obj[w[0]] = new Array();
         if(!obj[w[1]]) obj[w[1]] = new Array();
@@ -19,7 +19,6 @@ function solution(n, wires) {
     
     return diff;
 }
-
 
 function getAbs(n, obj, left, right) {
     let abs = Math.abs(countNode(obj, left, right) - countNode(obj, right, left));
