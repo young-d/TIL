@@ -29,27 +29,27 @@
 ```jsx
 function printHello() {
 
-console.log('Hello');
+	console.log('Hello');
 
 }
 
-printHello();  *// Hello*
+printHello();  // Hello
 
 function log(message) {
 
-console.log(message);
+	console.log(message);
 
 }
 
-log('Hello@');  *// Hello@*
+log('Hello@');  // Hello@
 
-log(1234);  *// 1234(string)*
+log(1234);  // 1234(string)
 
-*//cf> TypeScript*
+//cf> TypeScript
 
 function log(message : string): number {
 
-console.log(message);
+	console.log(message);
 
 return 0;
 
@@ -64,7 +64,7 @@ return 0;
 ```jsx
 function changeName(obj) {
 
-obj.name = 'coder';
+	obj.name = 'coder';
 
 }
 
@@ -79,10 +79,10 @@ console.log(ellie);  // { name : 'coder'}
 
 ```jsx
 function showMessage(message, from) {
-		if ( from === undefined ) {
-				from = 'unknown';
-		}
-		console.log(`${message} by ${from}`);
+	if ( from === undefined ) {
+			from = 'unknown';
+	}
+	console.log(`${message} by ${from}`);
 }
 
 showMessage('Hi!');  // Hi! by unknown (undefined로 출력되는 것 방지하고자 if문에서 default 값으로 unknown 지정)
@@ -105,34 +105,32 @@ showMessage('Hi!');  *// Hi! by default*
 ```jsx
 function printAll(...args) {
 
-// for loop
+	// for loop
 
-for (let i = 0; i < args.length; i++) {
+	for (let i = 0; i < args.length; i++) {
 
-console.log(args[i]);
+		console.log(args[i]);
 
-}
+	}
 
-// for ~ of ~
+	// for ~ of ~
 
-for (const arg of args) {
+	for (const arg of args) {
 
-console.log(arg);
+		console.log(arg);
 
-}
+	}
 
-// forEach 함수
+	// forEach 함수
 
-args.forEach((arg) => console.log(arg));
+	args.forEach((arg) => console.log(arg));
 
 }
 
 printAll('dream', 'coding', 'ellie');
 
 // dream
-
 // coding
-
 // ellie
 ```
 
@@ -145,25 +143,25 @@ let globalMessage = 'global';  // -> global variable
 
 function printMessage() {
 
-		let message = 'hello';  // -> local variable
-		
-		console.log(message);  // hello
-		
-		console.log(globalMessage); // global
-		
-		//함수 안에 또 다른 함수 선언 가능
-		
-		function printAnother() {
-		
-				console.log(message);
-				
-				let childMessage = 'hello';
-				
-		}
+	let message = 'hello';  // -> local variable
 
-		//console.log(childMessage);  // -> Error : childMessage is not defined
+	console.log(message);  // hello
 
-		printAnother();  // hello
+	console.log(globalMessage); // global
+
+	//함수 안에 또 다른 함수 선언 가능
+
+	function printAnother() {
+
+			console.log(message);
+
+			let childMessage = 'hello';
+
+	}
+
+	//console.log(childMessage);  // -> Error : childMessage is not defined
+
+	printAnother();  // hello
 
 }
 
@@ -178,9 +176,9 @@ printMessage();
 
 ```jsx
 function sum(a, b) {
-		return a + b;
-		
-		//  return undefined;
+	return a + b;
+
+	//  return undefined;
 }
 
 const result = sum(1, 2);  // 3
@@ -195,22 +193,22 @@ console.log(`sum: ${result}`);  // 3
 ```jsx
 //bad case
 function upgradeUser(user) {
-		if(user.point > 10) {
-		
-		//long upgrade logic...
-		
-		}
+	if(user.point > 10) {
+
+	//long upgrade logic...
+
+	}
 }
 
 //good case
 function upgradeUser(user) {
-		//조건이 맞지 않을 때에는 빨리 return으로 함수를 종료시키고 (ex>값이 -1인경우, 값이 undefined인 경우)
-		if(user.point <= 10) {
-				return;
-		}
-		
-		//조건이 맞을 때에만 필요한 logic 실행
-		//(long upgrade logic...)
+	//조건이 맞지 않을 때에는 빨리 return으로 함수를 종료시키고 (ex>값이 -1인경우, 값이 undefined인 경우)
+	if(user.point <= 10) {
+			return;
+	}
+
+	//조건이 맞을 때에만 필요한 logic 실행
+	//(long upgrade logic...)
 }
 ```
 
@@ -236,13 +234,13 @@ function upgradeUser(user) {
 
 const print = function() {  //anonymous function
 
-		console.log('print');
+	console.log('print');
 
 };
 
 const print = function print() {  //named function
 
-		console.log('print');
+	console.log('print');
 
 };
 
@@ -258,7 +256,7 @@ console.log(sumAgain(1, 3));  //4
 
 function sumAll(a, b) {  //함수 선언부는 가장 위로 올려진다(function hoisting)
 
-		return a + b;
+	return a + b;
 
 }
 ```
@@ -267,18 +265,18 @@ function sumAll(a, b) {  //함수 선언부는 가장 위로 올려진�
 
 ```jsx
 function randomQuiz(answer, printYes, printNo) {  //printYes, printNo : 콜백함수
-			if(answer === 'love you') {
-					printYes();
-			}else {
-					printNo();
-			}
+	if(answer === 'love you') {
+			printYes();
+	}else {
+			printNo();
+	}
 }
 
 //1_ anonymous function
 
 const printYes = function() {
 
-		console.log('yes!');
+	console.log('yes!');
 
 }
 
@@ -288,7 +286,7 @@ const printYes = function() {
 
 const printNo = function print() {
 
-		console.log('no!');
+	console.log('no!');
 
 //  print();   ->  recursions
 
@@ -308,7 +306,7 @@ randomQuiz('love you', printYes, printNo); //yes!
 
 const simplePrint = function () {
 
-		console.log('simplePrint!');
+	console.log('simplePrint!');
 
 };
 
@@ -318,9 +316,9 @@ const simplePrint = () => console.log('simplePrint!');
 
 const add = function (a, b) {
 
-		//do something more*
+	//do something more*
 
-		return a + b;
+	return a + b;
 };
 
 const add = (a, b) => a + b;
@@ -330,12 +328,12 @@ const add = (a, b) => a + b;
 
 - *Immediately Invoked Function Expression*
 
-(*요즘 잘 쓰진 않지만 js에서 바로 함수를 실행하고 싶을 때 사용하면 좋음)*
+*(요즘 잘 쓰진 않지만 js에서 바로 함수를 실행하고 싶을 때 사용하면 좋음)*
 
 ```jsx
 (function hello() {
 
-			console.log('IIFE');  //IIFE
+	console.log('IIFE');  //IIFE
 
 })();
 ```
