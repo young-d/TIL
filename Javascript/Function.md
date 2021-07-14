@@ -1,3 +1,5 @@
+# 함수 (+Arrow Function)
+
 - *sub-program*
 
     *- input & output*
@@ -7,6 +9,10 @@
 - *fundamental building block in the program*
 - *subprogram can be used multiple times*
 - *perfoms a task or calculates a value*
+
+<br/>
+<br/>
+
 
 # *함수선언*
 
@@ -70,8 +76,6 @@ console.log(ellie);  // { name : 'coder'}
 ```
 
 ### *3. Default parameters (added in ES6)*
-
-- 
 
 ```jsx
 function showMessage(message, from) {
@@ -210,6 +214,10 @@ function upgradeUser(user) {
 }
 ```
 
+<br/>
+<br/>
+
+
 # *함수표현*
 
 - *First-class function*
@@ -318,7 +326,7 @@ const add = function (a, b) {
 const add = (a, b) => a + b;
 ```
 
-## *4. IIFE*
+### *4. IIFE*
 
 - *Immediately Invoked Function Expression*
 
