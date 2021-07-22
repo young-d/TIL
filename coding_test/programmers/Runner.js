@@ -3,11 +3,8 @@ function solution(participant, completion) {
     let obj = {};
     
     for(let p of participant) {
-        if(!obj[p]) {
-            obj[p] = 1;
-        }else {
-            obj[p] += 1;
-        }
+        if(!obj[p]) obj[p] = 1;
+        else obj[p] += 1;
     }
     
     for(let c of completion) {
@@ -17,10 +14,9 @@ function solution(participant, completion) {
     for(let p of participant) {
         if(obj[p] !== 0) {
             answer = p;
+            break;
         }
     }
     
     return answer;
 }
-
-console.log(solution(["leo", "kiki", "eden"],["eden", "kiki"]));
