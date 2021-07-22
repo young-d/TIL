@@ -1,10 +1,12 @@
 function solution(clothes) {
-    let answer = 1;
+    let answer = 0;
+    let combination = 1;
     let kinds = [];
     
     for(let i = 0; i < clothes.length; i++) {
         kinds.push(clothes[i][1]);
     }
+
 
     let obj = kinds.reduce((cnt, element) => {
         if(cnt[element]) {
@@ -15,11 +17,12 @@ function solution(clothes) {
         return cnt;
     }, {});
 
+    
     for(let key in obj) {
-        answer *= obj[key];
+        combination *= obj[key];
     }
     
-    return answer - 1;
+    answer = combination - 1;
+    
+    return answer;
 }
-
-solution([["yellowhat", "headgear"], ["bluesunglasses", "eyewear"], ["green_turban", "headgear"]]);
