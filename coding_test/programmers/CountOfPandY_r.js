@@ -1,5 +1,4 @@
 function solution(s){
-
     let map = new Map();
     map.set('p', 0);
     map.set('y', 0);

@@ -1,5 +1,4 @@
 function solution(s){
-
     let obj = s.split('').reduce((acc, element) => {
         if(element.toLowerCase() === 'p') acc['p']++;
         if(element.toLowerCase() === 'y') acc['y']++;

@@ -1,5 +1,5 @@
 function solution(strings, n) {
-    var answer = [];
+    let answer = [];
 
     answer = strings.sort()
         .sort((a, b) => {
