@@ -1,5 +1,5 @@
 function solution(numbers, hand) {
-    var answer = '';
+    let answer = '';
   
     let currLeft = 10;
     let currRight = 12;
