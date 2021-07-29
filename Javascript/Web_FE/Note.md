@@ -1,13 +1,3 @@
-[#window 객체](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)
-
-[#DOM](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)
-
-[#Event](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)
-
-[#Networking](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)
-
-[#Extra](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)
-
 # # window Object
 
 - Javascript 실행시 **가장 상위**에 존재하는 객체
@@ -21,7 +11,7 @@
 
 <br>
 
-# # **DOM(Document Object Model)**
+# # DOM(Document Object Model)
 
 - 컴퓨터가 문서를 잘 처리할 수 있도록 **문서의 구조**를 약속한 것
     - **Tree** 형태를 따름 : 족보나 가계도와 비슷함
