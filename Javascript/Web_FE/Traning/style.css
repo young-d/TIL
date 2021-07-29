@@ -9,6 +9,7 @@ body {
     height: 200px;
     margin: 2px;
     border: 1px solid white;
+    overflow: hidden;
     z-index: 0;
 }
 
