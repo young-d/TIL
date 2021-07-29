@@ -56,8 +56,8 @@
 
 ### 💎 Element API
 
-- `.innerHTML` 속성 ****: ****엘리먼트 안의 HTML코드를 변경
-- `.innerText` 속성 **[:](https://www.notion.so/JS-Web-FE-77d22bfb11a04319baa8c68d6504d58d)** 엘리먼트 안의 텍스트를 변경
+- `.innerHTML` 속성 : 엘리먼트 안의 HTML코드를 변경
+- `.innerText` 속성 : 엘리먼트 안의 텍스트를 변경
 - `.style` 속성 : css를 변경 가능
 - `getAttribute` 메소드
     - element의 속성의 값을 얻어옴
@@ -73,7 +73,7 @@
 ### 📑 Document API
 
 - `document.getElementsBy~` : 다중 엘리먼트를 선택하는 메소드. 배열형태로 값을 반환함
-- `document.getElementsByTagName` ****메소드
+- `document.getElementsByTagName` 메소드
     - 인자로 **HTML element 태그의 이름**을 전달하면 해당 엘리먼트들이 반환됨
 - `document.getElementsClassName` 메소드
     - 인자로 **class의 이름**을 전달하면, 해당 class의 모든 엘리먼트가 배열로 반환됨
@@ -170,7 +170,7 @@
         ```jsx
         document.getElementById("form1").onsubmit = function eventHandler(){
         	  console.log("from property");
-        	  return false; *// 브라우저의 submit 처리 비활성*
+        	  return false; // 브라우저의 submit 처리 비활성
         }
         ```
 
@@ -218,7 +218,7 @@
 
     `req.open("GET", "./data.txt");` : *http request method와 URL 설정*
 
-3.  ****요청 **전송**
+3. 요청 **전송**
 
     `req.send();`
 
@@ -239,13 +239,20 @@
 
 - `readyState` 속성 : AJAX 요청에 따라 **0~4까지 변화**함
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b96d669-5ef9-4e67-b55c-0b4a9fc55c89/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b96d669-5ef9-4e67-b55c-0b4a9fc55c89/Untitled.png)
+   - 0 : open 메소드 호출 전
+   - 1 : open 메소드 호출 후, send 메소드 호출 전
+   - 2 : 보낸 요청에 대해 응답 헤더가 수신된 후
+   - 3 : 응답의 바디 부분이 수신중일 때
+   - 4 : 모든 응답이 수신되었을 때
 
 - `onreadystatechange` 속성 : readyState가 변할 때마다 호출되는 **콜백 함수**
 
 - `status` 속성 : HTTP response의 **응답 헤더**에 기록된 코드
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9b209f0-d779-49b6-af0a-d03c4d126575/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9b209f0-d779-49b6-af0a-d03c4d126575/Untitled.png)
+   - 200 : OK
+   - 404 : Not Found
+   - 500 : Internal Error <br>
+   ...
 
 - **응답을 정상적으로 수신한 경우**
     - `readyState : 4`
@@ -274,10 +281,10 @@
 var original_obj = { pi:3.14, str:"string" };
 
 var json_str = JSON.stringify( original_obj );
-*// 반환 문자열 : {"pi":3.14,"str":"string"}*var parsed_obj = JSON.parse( json_str );
+var parsed_obj = JSON.parse( json_str );
 
-console.log( original_obj ); *// {pi: 3.14, str: "string"}*
-console.log( parsed_obj ); *// {pi: 3.14, str: "string"}*
+console.log( original_obj ); // {pi: 3.14, str: "string"}
+console.log( parsed_obj ); // {pi: 3.14, str: "string"}
 ```
 
 - undefined, function 은 변환되지 않음에 주의!
@@ -291,7 +298,7 @@ console.log( parsed_obj ); *// {pi: 3.14, str: "string"}*
 
     req.onreadystatechange = function(){
         if( this.readyState == 4 ){
-            *// ...*
+            // ...
     		}
     }
 
@@ -305,7 +312,7 @@ console.log( parsed_obj ); *// {pi: 3.14, str: "string"}*
     req.onreadystatechange = function(){
         if( this.readyState == 4 ){
             data = JSON.parse(this.response);
-            *//...*
+            //...
     		}
     }
     ```
@@ -328,7 +335,7 @@ console.log( parsed_obj ); *// {pi: 3.14, str: "string"}*
 - 브라우저는 **HTML 문서**를 읽으면서 **script tag**를 실행함
     - HTML 문서 Element 파싱 보다 스크립트가 먼저 실행되면 접근되지 않음
     - 페이지의 **상단의 script** 에서 이후 파싱될 Element에 접근하고 싶다면 `onload` 등의 **eventhandler로 실행**되도록 해야 함
-- `async`, `defer` 속성을 이용하면 **스크립트의 실행**과 **문서의 로딩**을 **동시**에 진행할 수 있음**(비 동기적)**
+- `async`, `defer` 속성을 이용하면 **스크립트의 실행**과 **문서의 로딩**을 **동시**에 진행할 수 있음 **(비 동기적)**
 
 ## 2. ****Chrome 디버거 활용****
 
@@ -369,7 +376,7 @@ console.log( parsed_obj ); *// {pi: 3.14, str: "string"}*
 ```jsx
 setTimeout(
     function (){
-        *//함수 내용*
+        //함수 내용
 		},3000 
 );
 ```
@@ -380,7 +387,7 @@ setTimeout(
 
 ```jsx
 function (){
-    *//함수 내용* 
+    //함수 내용
 }();
 ```
 
@@ -394,13 +401,13 @@ function (){
 
 ```jsx
 try{
-    *// 정상적으로 실행되는 경우 실행될 프로그램 작성
-		// try 블록안에서 에러가 발생한 경우 catch 블록으로 이동함*
+    // 정상적으로 실행되는 경우 실행될 프로그램 작성
+	// try 블록안에서 에러가 발생한 경우 catch 블록으로 이동함
 }catch(e){
-    *// try 블록에서 에러가 발생한 경우
-		// 에러를 인자 e로 받아 에러를 처리하는 코드를 작성*
+    // try 블록에서 에러가 발생한 경우
+	// 에러를 인자 e로 받아 에러를 처리하는 코드를 작성
 }finally{
-    *// try, catch구문이 실행되고 나서 실행될 코드(반드시 실행)*
+    // try, catch구문이 실행되고 나서 실행될 코드(반드시 실행)
 }
 ```
 
