@@ -7,7 +7,10 @@ req.onreadystatechange = function() {
         //문서에 이미지 추가
         for(let i = 0; i < data.length; i++) {
             let div = document.createElement("div");  //div 태그
-            div.setAttribute("class", "image");
+            div.classList.add("image");
+            div.onclick = function() {
+                div.classList.toggle("image-selected");
+            }
             let img = document.createElement("img");  //img 태그
             img.src = data[i];
             div.appendChild(img);
