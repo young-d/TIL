@@ -8,8 +8,22 @@ req.onreadystatechange = function() {
         for(let i = 0; i < data.length; i++) {
             let div = document.createElement("div");  //div 태그
             div.setAttribute("class", "image");
+            //이미지 선택/해제
             div.onclick = () => {
-                div.classList.toggle("image-selected");
+                this.classList.toggle("image-selected");
+            }
+            //이미지 확대
+            div.onmouseover = () => {
+                let element = this;
+                //1초간 이미지 확대
+                this.timerId = setTimeout(() => {
+                    element.classList.add("image-magnified");
+                }, 1000);
+            }
+            //이미지 축소
+            div.onmouseout = () => {
+                clearTimeout(this.timerId);
+                this.classList.remove("image-magnified");
             }
             let img = document.createElement("img");  //img 태그
             img.src = data[i];
